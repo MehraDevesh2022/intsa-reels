@@ -1,0 +1,43 @@
+ feature in any server must be like these
+
+Authentictaion :
+ * login
+ * signup
+ * forgot
+ * Reset
+ for these service Firebase provide fireball
+
+Databse :
+  * user => meta data of user
+  * reels => meta data of reels
+ All action of data and there action in Databse Firebase provide  firestore
+
+
+Storage : 
+  All data like img , video and other data store in Storage and there links are store in Database.
+
+
+Firebase => So firebase is used for prototype as backend. its also known as backend as service
+            Firebase provide all feature availble in backend 
+  
+  steps : 
+   Go to home page
+   click on console
+   Click on add project
+   Enter your project name
+   Add project name
+   go through all instruction 
+    once poject created 👍
+       click on build
+       click on Authentictaion
+       go to in Sign in method
+       click on email and pass
+       enable it and then save
+     once you these steps 👍
+        go to project overview
+         click on app
+         click web
+         cretae a app
+         then to project settings beside Project overview
+         copy your firebase config obj
+         save into secret.js in your project
