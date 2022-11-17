@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {auth} from "../firbase"
-import {signInWithEmailAndPassword} from "firebase/auth";
+import {signInWithEmailAndPassword , signOut} from "firebase/auth";
+import { async } from "@firebase/util";
 function Login(){
   
   let [email , setEmail] = useState('')
@@ -38,6 +39,11 @@ function Login(){
 
 
   }
+
+  const signout =async ()=>{
+    await signOut(auth);
+    setUser(null)
+  }
     return(
         <>
         {
@@ -45,7 +51,7 @@ function Login(){
           :
           loder ==true ? <h1>...loding</h1> 
           :
-          user !=null ? <h1>user is{user.uid}</h1> 
+          user !=null ?  <><button onClick={signout}>Sign Out</button> <h1> user is{user.uid}</h1></> 
           : 
  <>
         <h1> This is from Login</h1>
