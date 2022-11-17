@@ -41,3 +41,13 @@ Firebase => So firebase is used for prototype as backend. its also known as back
          then to project settings beside Project overview
          copy your firebase config obj
          save into secret.js in your project
+
+     Once you don with these step 👍
+         Crate a user add email and pass in Authentictaion
+
+
+Now how to coonect with Firebase in your project =>
+npm i firebase
+make a file in src => firebase.js
+import firebase in firebase.js file 
+write code here for connecting firebase
