@@ -31,8 +31,8 @@ function SignUp(){
                     fullName,
                     reelsId :[],
                     profileUrl : "",
-                    userId : userCred.uid
-  });
+                    userId : userCred.user.uid
+             });
 
         setUser(userCred.user)
 
@@ -40,7 +40,7 @@ function SignUp(){
        setError(err.message)
        setTimeout(() => {
            setError('')
-       }, 2000);
+       }, 5000);
        }
        setLoader(false)
    }
@@ -49,7 +49,7 @@ function SignUp(){
      <>
        { error !=''? <h1>error is{error}</h1> :
          loader == true ?<h1>loading ...</h1> :
-        user !=null ? <h1>SingdUp user is {user.uid}</h1> :
+        user !=null ? <h1>SingedUp user is {user.uid}</h1> :
 <>     <input type ="text" value={email} placeholder="Enter email"  onChange={trackEmail}></input>
       <br></br>
       <input type="password" placeholder="Password" onChange={trackPassword}></input>
