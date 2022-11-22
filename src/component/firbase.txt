@@ -1,13 +1,13 @@
  feature in any server must be like these
 
-Authentictaion :
+Authentictaion : auth
  * login
  * signup
  * forgot
  * Reset
  for these service Firebase provide fireball
 
-Databse :
+Databse : firestore
   * user => meta data of user
   * reels => meta data of reels
  All action of data and there action in Databse Firebase provide  firestore
