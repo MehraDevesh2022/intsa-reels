@@ -59,7 +59,7 @@ onAuthStateChanged(auth, (user) => {
     // ...
     setUser(null)
   }
-  setMainLoader(false)
+  // setMainLoader(false)
 });
 } ,[])
 
@@ -76,8 +76,8 @@ onAuthStateChanged(auth, (user) => {
    return(
         <>
         {
-          mainLoder == true ? <h1>Page loading...</h1>
-          :
+          // mainLoder == true ? <h1>Page loading...</h1>
+          // :
           error !=''? <h1>error is {error}</h1> 
           :
           loader ==true ? <h1>...loding</h1> 
