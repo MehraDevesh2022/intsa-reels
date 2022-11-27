@@ -1,0 +1,15 @@
+.header{
+    display:  flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+}
+.insta_img{
+    height: 3rem;
+}
+.profile_img{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: contain;
+}

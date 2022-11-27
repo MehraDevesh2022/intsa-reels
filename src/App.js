@@ -19,8 +19,8 @@ function App() {
           return <Feed></Feed>
          }}></Route> */}
         {/* this is how to another way we have option to right Route where we have render method and render take props as a parameter and we have option to write logic inside return */}
-        <Route path="/login"> <Login></Login></Route>
-        <Route path="/signup"><SignUp></SignUp></Route>
+        <Route path="/login" ><Login></Login></Route>
+        <Route path="/signup" ><Login></Login></Route>
         {/* we need to add some logic inside profile path and feed path as well so we making our own PrivateRoute component for that */}
         {/* here inside of PrivateRoute component we passing <Profile></Profile> component and path as props  */}
         <PrivateRoute path="/profile" component={Profile} />
@@ -33,13 +33,16 @@ function App() {
 }
 // this Component(PrivateRoute) checks if cUser logged in then Redirect Feed / Profile Component else render into Login page
 function PrivateRoute({ component: Component, ...rest }) {
-  const { user } = useContext(AuthContext)
+  const user  = useContext(AuthContext)
+
   return (
     <Route {...rest} render={props => {
-      return user ? <Component {...props} /> : <Redirect to="login" />
+      return user.currUser ? <Component /> : <Redirect to="login" />
     }} />
   )
 }
+
+
 
 
 
