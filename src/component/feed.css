@@ -13,3 +13,26 @@
     border-radius: 50%;
     object-fit: contain;
 }
+
+.main_container{
+    display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-top: 10px;
+}
+
+.upload_container{
+    border: 3px solid rgb(207 ,64 ,85);
+    width: 7rem;
+    height: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+}
+.upload_text ,.movie_icon{
+color :rgb(207, 64, 85);
+}
+.upload_text{
+    font-weight: bolder;
+}

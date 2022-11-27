@@ -17,7 +17,8 @@ function Feed(){
         </div>
         <div className="main_container">
           <div className="upload_container">
-            <i class="fa-solid fa-clapperboard"></i>
+            <i className="movie_icon fa-solid fa-clapperboard"></i>
+            <div className="upload_text">Upload</div>
           </div>
           <div className="reels_container">Reels</div>
         </div>
