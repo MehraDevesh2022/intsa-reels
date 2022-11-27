@@ -24,14 +24,17 @@ function SignUp(){
    const processSignup =async ()=>{
        try{
          setLoader(true)
-        let userCred =await createUserWithEmailAndPassword(auth, email, password)
+        let userCred =await createUserWithEmailAndPassword(auth, email, password) // this will add details into  auth section(email , pass for future log in)
         console.log(userCred);
-        const docRef = await addDoc(collection(db, "users"), {
+        // this will add all detials of user into firebase database firestore
+        const docRef = await addDoc(collection(db, "users"), { // this code is refer to firebase
+          // cracting a collection into firebase db with name users
+          // these info will add into the data base in users collection
                     email,
                     fullName,
                     reelsId :[],
                     profileUrl : "",
-                    userId : userCred.user.uid
+                    userId : userCred.user.uid // this is unique id provided by firbase auth fro every user  
              });
 
         setUser(userCred.user)

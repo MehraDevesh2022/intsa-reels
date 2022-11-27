@@ -51,3 +51,12 @@ npm i firebase
 make a file in src => firebase.js
 import firebase in firebase.js file 
 write code here for connecting firebase
+
+
+ {/* this is how to we use Route passing the path and component inside of it */}
+        {/* this is one of the way to right route component where path is props and login is component */}
+        {/* but there is another version also to right route when we need to add some logic with route */}
+        {/* <Route path='/feed' render={(props) =>{
+          return <Feed></Feed>
+         }}></Route> */}
+        {/* this is how to another way we have option to right Route where we have render method and render take props as a parameter and we have option to write logic inside return */}

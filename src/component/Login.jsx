@@ -68,10 +68,7 @@ onAuthStateChanged(auth, (user) => {
     await signOut(auth);
     setUser(null)
   }
-
-
-    
-    
+ 
   
    return(
         <>

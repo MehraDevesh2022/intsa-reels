@@ -7,6 +7,9 @@ export function AuthContextProvider({children}){
     let [mainLoader , setMainLoader] = useState(true);
     let [currUser , setCurrUser] = useState('')
     
+ 
+ // onAuthStateChanged() function provied to hole application user state is log in or not
+ // we are using this function inside the context because we don't need that add this function to all component therefore we are making this as global for user login and logout state
     useEffect(() =>{
 onAuthStateChanged(auth, (user) => {
   if (user) {
@@ -25,10 +28,14 @@ onAuthStateChanged(auth, (user) => {
 
 let value = {currUser}
 
-return(
- <AuthContext.Provider value={value}>
+return (
+  //  value is current user details
+  <AuthContext.Provider value={value}> 
 
-  {!mainLoader  && children}
- </AuthContext.Provider>
-)
+    {/* without user state none of any component will render because all are wrapped
+    inside the AuthContextProvider function into app.js and those all are the
+    children of AuthContextProvider so until mainLoader == true nothing will render on the screen  */}
+    {mainLoader == false && children}
+  </AuthContext.Provider>
+);
 }
