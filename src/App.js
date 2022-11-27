@@ -24,7 +24,7 @@ function App() {
         {/* we need to add some logic inside profile path and feed path as well so we making our own PrivateRoute component for that */}
         {/* here inside of PrivateRoute component we passing <Profile></Profile> component and path as props  */}
         <PrivateRoute path="/profile" component={Profile} />
-        <PrivateRoute path="/" component={Feed} />
+        <PrivateRoute path="/feed" component={Feed} />
         <Route><PageNotFound></PageNotFound></Route>
       </Switch>
 
