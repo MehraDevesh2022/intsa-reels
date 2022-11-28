@@ -20,7 +20,7 @@ function App() {
          }}></Route> */}
         {/* this is how to another way we have option to right Route where we have render method and render take props as a parameter and we have option to write logic inside return */}
         <Route path="/login" ><Login></Login></Route>
-        <Route path="/signup" ><Login></Login></Route>
+        <Route path="/signup" ><SignUp></SignUp></Route>
         {/* we need to add some logic inside profile path and feed path as well so we making our own PrivateRoute component for that */}
         {/* here inside of PrivateRoute component we passing <Profile></Profile> component and path as props  */}
         <PrivateRoute path="/profile" component={Profile} />
