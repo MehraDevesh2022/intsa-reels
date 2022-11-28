@@ -60,3 +60,12 @@ write code here for connecting firebase
           return <Feed></Feed>
          }}></Route> */}
         {/* this is how to another way we have option to right Route where we have render method and render take props as a parameter and we have option to write logic inside return */}
+
+
+        // get and set data =>
+          data stores as collection (eg : user) in db and each collection has document 
+          document : key and value pair are document in every collection eg > name : "Rahul" 
+
+        fire base has to way to set data =>
+          add => using add we dont have option to set our id for every document . it is automatically provided by firebase . so later its hard to get user data from Databse
+          set => on the otherhand we have set and set method provide option to set id for every user . using that id we have option to get user data easyly

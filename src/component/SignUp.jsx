@@ -1,7 +1,7 @@
 import { async } from "@firebase/util";
 import React,{useState} from "react";
 import {auth ,db } from "../firbase"
-import { collection, addDoc } from "firebase/firestore"; 
+import { collection, addDoc, doc, setDoc } from "firebase/firestore"; 
 import {createUserWithEmailAndPassword } from "firebase/auth";
 
 
@@ -23,22 +23,40 @@ function SignUp(){
    }
    const processSignup =async ()=>{
        try{
-         setLoader(true)
-        let userCred =await createUserWithEmailAndPassword(auth, email, password) // this will add details into  auth section(email , pass for future log in)
-        console.log(userCred);
-        // this will add all detials of user into firebase database firestore
-        const docRef = await addDoc(collection(db, "users"), { // this code is refer to firebase
-          // cracting a collection into firebase db with name users
-          // these info will add into the data base in users collection
-                    email,
-                    fullName,
-                    reelsId :[],
-                    profileUrl : "",
-                    userId : userCred.user.uid // this is unique id provided by firbase auth fro every user  
-             });
+         setLoader(true);
 
-        setUser(userCred.user)
+         let userCred = await createUserWithEmailAndPassword(
+           auth,
+           email,
+           password
+         ); // this will add details into  auth section(email , pass for future log in)
+         console.log(userCred);
 
+         // this will add all detials of user into firebase database firestore
+         // #### this one using set method. here we have option to pass id for every documnet.
+         // we passing  userCred.user.uid for every documnet as paameter . as a docmunet id
+         await setDoc(doc(db, "users", userCred.user.uid), {
+           email,
+           fullName,
+           reelsId: [],
+           profileUrl: "",
+           userId: userCred.user.uid,
+         });
+
+         //###### this one is using add method :
+         // . here we dont have to option to set id for user document.with this method id added by firse store for very user document
+         // not having id for document is way more deficult to get user data from db later
+         // const docRef = await addDoc(collection(db, "users"), { // this code is refer to firebase
+         //   // cracting a collection into firebase db with name users
+         //   // these info will add into the data base in users collection
+         //             email,
+         //             fullName,
+         //             reelsId :[],
+         //             profileUrl : "",
+         //             userId : userCred.user.uid // this is unique id provided by firbase auth fro every user
+         //      });
+
+         setUser(userCred.user);
        }catch(err){
        setError(err.message)
        setTimeout(() => {
